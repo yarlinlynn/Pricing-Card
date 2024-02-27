@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="https://www.codingnepalweb.com/wp-content/uploads/2023/01/codingnepal-favicon-32x32-1.png">
+  <title>Pricing Cards | CodingNepal</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <nav>
+            <button type="button" class="tab-btn active" data-tab-btn="tab-1">Baisc</button>
+            <button type="button" class="tab-btn" data-tab-btn="tab-2">Standard</button>
+            <button type="button" class="tab-btn" data-tab-btn="tab-3">Team</button>
+        </nav>
+
+        
+        <div class="main-content-box active" data-tab-content="tab-1">
+            <div class="card-conatiner">
+                <div class="price-details">
+                    <span class="price">99</span>
+                    <p>For beginner use</p>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i><span>100 GB Premium Bandwidth</span></li>
+                    <li><i class="fas fa-check"></i><span>FREE 50+ Installation Scripts WordPress Supported</span></li>
+                    <li><i class="fas fa-check"></i><span>One FREE Domain Registration .com and .np extensions only</span></li>
+                    <li><i class="fas fa-check"></i><span>Unlimited Email Accounts & Databases</span></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="main-content-box" data-tab-content="tab-2">
+            <div class="card-conatiner">
+                <div class="price-details">
+                    <span class="price">99</span>
+                    <p>For professional use</p>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i><span>Unlimited GB Premium Bandwidth</span></li>
+                    <li><i class="fas fa-check"></i><span>FREE 200+ Installation Scripts WordPress Supported</span></li>
+                    <li><i class="fas fa-check"></i><span>Five FREE Domain Registration .com and .np extensions only</span></li>
+                    <li><i class="fas fa-check"></i><span>Unlimited Email Accounts & Databases</span></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="main-content-box" data-tab-content="tab-3">
+            <div class="card-conatiner">
+                <div class="price-details">
+                    <span class="price">99</span>
+                    <p>For team collaboration</p>
+                </div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i><span>200 GB Premium Bandwidth</span></li>
+                    <li><i class="fas fa-check"></i><span>FREE 100+ Installation Scripts WordPress Supported</span></li>
+                    <li><i class="fas fa-check"></i><span>Two FREE Domain Registration .com and .np extensions only</span></li>
+                    <li><i class="fas fa-check"></i><span>Unlimited Email Accounts & Databases</span></li>
+                </ul>
+            </div>
+        </div> 
+
+        <button class="footer-btn">Choose plan</button>
+
+    </div>
+
+    <script>
+        const $tabBtn = document.querySelectorAll("[data-tab-btn]");
+        let [lastActiveTab] = document.querySelectorAll("[data-tab-content]");
+        let [lastActiveTabBtn] = $tabBtn;
+
+        $tabBtn.forEach(item =>{
+            item.addEventListener("click", function () {
+            lastActiveTab.classList.remove("active");
+            lastActiveTabBtn.classList.remove("active");
+
+            const $tabContent = document.querySelector(`[data-tab-content="${item.dataset.tabBtn}"]`);
+            $tabContent.classList.add("active");
+            this.classList.add("active");
+
+            lastActiveTab = $tabContent;
+            lastActiveTabBtn = this
+        });
+    });
+    </script>
+
+</body>
+</html>
